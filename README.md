@@ -1,4 +1,4 @@
-# DEEMO 抽選ツール
+# DEEMO -Reborn- 非公式補助ツール v0.99
 
 スマホ操作前提の DEEMO -Reborn- 抽選用静的Webアプリです。
 
