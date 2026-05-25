@@ -261,29 +261,11 @@ function renderSongCard(song) {
 }
 
 function attachLongPressCopy(card, song) {
-  let pressTimer = null;
+  card.addEventListener("click", () => {
+    copySongInfo(song);
+  });
 
-  const startPress = () => {
-    pressTimer = setTimeout(() => {
-      copySongInfo(song);
-    }, 650);
-  };
-
-  const cancelPress = () => {
-    if (pressTimer) {
-      clearTimeout(pressTimer);
-      pressTimer = null;
-    }
-  };
-
-  card.addEventListener("touchstart", startPress, { passive: true });
-  card.addEventListener("touchend", cancelPress);
-  card.addEventListener("touchmove", cancelPress);
-  card.addEventListener("touchcancel", cancelPress);
-  card.addEventListener("mousedown", startPress);
-  card.addEventListener("mouseup", cancelPress);
-  card.addEventListener("mouseleave", cancelPress);
-  card.addEventListener("contextmenu", (event) => event.preventDefault());
+  card.style.cursor = "pointer";
 }
 
 async function copySongInfo(song) {
