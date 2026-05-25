@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#141016" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; object-src 'none';" />
-  <title>DEEMO ランセレツール</title>
+  <title>DEEMO 抽選ツール</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
@@ -13,38 +13,42 @@
     <header class="app-header">
       <div>
         <p class="eyebrow">DEEMO -Reborn-</p>
-        <h1>ランセレツール</h1>
+        <h1>抽選ツール</h1>
       </div>
     </header>
 
-    <section id="randomView" class="view is-active" aria-label="ランセレ">
+    <section id="randomView" class="view is-active" aria-label="抽選">
       <section class="card hero-card">
-        <h2>ランセレ条件</h2>
+        <h2>抽選条件</h2>
 
         <div class="field-group">
           <p class="field-title">パック</p>
-          <label class="radio-row">
-            <input type="radio" name="packMode" value="all" checked />
-            <span>全パック</span>
-          </label>
-          <label class="radio-row">
-            <input type="radio" name="packMode" value="custom" />
-            <span>パックを選択</span>
-          </label>
+          <div class="radio-choice-grid">
+            <label class="radio-row">
+              <input type="radio" name="packMode" value="all" checked />
+              <span>全パック</span>
+            </label>
+            <label class="radio-row">
+              <input type="radio" name="packMode" value="custom" />
+              <span>パックを選択</span>
+            </label>
+          </div>
         </div>
 
         <div id="packCheckboxArea" class="checkbox-area is-hidden"></div>
 
         <div class="field-group">
           <p class="field-title">難易度</p>
-          <label class="radio-row">
-            <input type="radio" name="difficultyMode" value="all" checked />
-            <span>全て</span>
-          </label>
-          <label class="radio-row">
-            <input type="radio" name="difficultyMode" value="custom" />
-            <span>難易度を選択</span>
-          </label>
+          <div class="radio-choice-grid">
+            <label class="radio-row">
+              <input type="radio" name="difficultyMode" value="all" checked />
+              <span>全て</span>
+            </label>
+            <label class="radio-row">
+              <input type="radio" name="difficultyMode" value="custom" />
+              <span>難易度を選択</span>
+            </label>
+          </div>
         </div>
 
         <div id="difficultyCheckboxArea" class="chip-area is-hidden">
@@ -62,14 +66,14 @@
           </label>
         </div>
 
-        <button id="randomButton" class="primary-button" type="button">ランセレ</button>
+        <button id="randomButton" class="primary-button" type="button">抽選</button>
       </section>
 
       <section id="resultCard" class="result-card is-empty">
-        <p class="empty-text">条件を選んで「ランセレ」を押してください。</p>
+        <p class="empty-text">条件を選んで「抽選」を押してください。</p>
       </section>
 
-      <button id="copyButton" class="secondary-button" type="button" disabled>結果をコピー</button>
+      <button id="copyButton" class="secondary-button" type="button" disabled>twitchチャット用に結果コピー</button>
     </section>
 
     <section id="listView" class="view" aria-label="曲一覧">
@@ -87,7 +91,7 @@
   </main>
 
   <nav class="bottom-nav" aria-label="画面切替">
-    <button class="nav-button is-active" data-view="randomView" type="button">ランセレ</button>
+    <button class="nav-button is-active" data-view="randomView" type="button">抽選</button>
     <button class="nav-button" data-view="listView" type="button">曲一覧</button>
   </nav>
 

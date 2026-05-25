@@ -182,7 +182,7 @@ function handleRandomSelect() {
   }
 
   const selected = candidates[Math.floor(Math.random() * candidates.length)];
-  latestResultText = `[DEEMOランセレ]\n${selected.title}\n${selected.difficulty} Lv${selected.level}\n${selected.artist}\n${selected.pack}`;
+  latestResultText = `[抽選結果] ${selected.title} / ${selected.artist} / ${selected.difficulty} Lv${selected.level}`;
 
   resultCard.classList.remove("is-empty");
   resultCard.innerHTML = `
@@ -211,7 +211,7 @@ async function handleCopyResult() {
   try {
     await navigator.clipboard.writeText(latestResultText);
     copyButton.textContent = "コピーしました";
-    setTimeout(() => { copyButton.textContent = "結果をコピー"; }, 1200);
+    setTimeout(() => { copyButton.textContent = "twitchチャット用に結果コピー"; }, 1200);
   } catch (error) {
     alert("コピーに失敗しました。結果テキストを長押しコピーしてください。");
   }

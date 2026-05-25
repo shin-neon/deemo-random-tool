@@ -76,6 +76,7 @@ h2 {
   color: var(--text);
 }
 input[type="radio"], input[type="checkbox"] { accent-color: var(--accent); }
+.radio-choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .checkbox-area, .chip-area {
   display: grid;
   gap: 8px;
