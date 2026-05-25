@@ -159,6 +159,10 @@ input[type="number"], input[type="search"], select {
 .song-thumb { width: 84px; height: 84px; border-radius: 14px; object-fit: cover; background: #211b24; }
 .song-title { margin: 1px 0 5px; font-size: 1rem; line-height: 1.25; }
 .song-meta { margin: 0; color: var(--muted); font-size: .85rem; line-height: 1.5; }
+.title {
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.08em;
+}
 .diff-row { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 7px; }
 .diff-pill { padding: 3px 7px; border-radius: 999px; background: rgba(207,174,123,.16); color: #ead2aa; font-size: .76rem; font-weight: 800; }
 .bottom-nav {

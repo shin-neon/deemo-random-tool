@@ -190,7 +190,7 @@ function handleRandomSelect() {
   }
 
   const selected = candidates[Math.floor(Math.random() * candidates.length)];
-  latestResultText = `[抽選結果] ${selected.title} / ${selected.artist} / ${selected.difficulty} Lv${selected.level}`;
+  latestResultText = `[抽選結果] ${selected.title} / ${selected.artist} / ${selected.pack} / ${selected.difficulty} Lv${selected.level}`;
 
   resultCard.classList.remove("is-empty");
   resultCard.innerHTML = `
@@ -273,7 +273,7 @@ async function copySongInfo(song) {
     .map(([difficulty, level]) => `${difficulty} Lv${level}`)
     .join(" / ");
 
-  const text = `${song.title} / ${song.artist} / ${difficultyText}`;
+const text = `${song.title} / ${song.artist} / ${song.pack} / ${difficultyText}`;
 
   try {
     await navigator.clipboard.writeText(text);
