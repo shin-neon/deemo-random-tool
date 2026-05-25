@@ -73,7 +73,7 @@ function switchView(viewId) {
 
   if (appTitle) {
     appTitle.textContent = viewId === "randomView"
-      ? "🎲抽選箱🎲 |っ・ω・)╮=͟͟͞=͟͟͞＝=͟͟͞=͟͟͞ 💎5 ⛩️"
+      ? "🎲抽選箱🎲\n |っ・ω・)╮=͟͟͞=͟͟͞＝=͟͟͞=͟͟͞ 💎5 ⛩️"
       : "🎹楽曲一覧🎹";
   }
 

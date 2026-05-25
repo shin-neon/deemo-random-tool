@@ -21,6 +21,10 @@ body {
 
 button, input, select { font: inherit; }
 
+#appTitle {
+  white-space: pre-line;
+}
+
 .app {
   width: 100%;
   max-width: 760px;
