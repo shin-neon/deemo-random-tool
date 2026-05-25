@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEEMO ランセレツール</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1>DEEMO ランセレツール</h1>
+      <p>パック・難易度・レベルを指定してランダム選曲できます。</p>
+    </header>
+
+    <section class="card">
+      <h2>ランセレ条件</h2>
+
+      <label class="label">
+        パック
+        <select id="packSelect">
+          <option value="all">全パック</option>
+        </select>
+      </label>
+
+      <label class="label">
+        難易度
+        <select id="difficultySelect">
+          <option value="all">全難易度</option>
+          <option value="Easy">Easy</option>
+          <option value="Normal">Normal</option>
+          <option value="Hard">Hard</option>
+          <option value="Extra">Extra</option>
+        </select>
+      </label>
+
+      <div class="level-row">
+        <label class="label">
+          最小Lv
+          <input id="minLevelInput" type="number" min="1" max="15" value="1" />
+        </label>
+
+        <label class="label">
+          最大Lv
+          <input id="maxLevelInput" type="number" min="1" max="15" value="15" />
+        </label>
+      </div>
+
+      <button id="randomButton" class="primary-button">ランセレ</button>
+
+      <div id="resultBox" class="result-box">
+        <div class="result-placeholder">ここに結果が表示されます</div>
+      </div>
+
+      <button id="copyButton" class="secondary-button" disabled>結果をコピー</button>
+    </section>
+
+    <section class="card">
+      <h2>曲一覧</h2>
+
+      <input id="searchInput" class="search-input" type="text" placeholder="曲名・アーティストで検索" />
+
+      <div id="songCount" class="song-count"></div>
+      <div id="songList" class="song-list"></div>
+    </section>
+  </main>
+
+  <script src="./songs.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
