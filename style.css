@@ -345,16 +345,21 @@ input[type="number"], input[type="search"], select {
 }
 
 .info-button {
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 999px;
   background: rgba(20, 20, 28, 0.78);
   color: rgba(255, 255, 255, 0.92);
-  font-size: 1.1rem;
-  font-weight: 700;
-  z-index: 50;
-  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  line-height: 1;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .info-modal.is-hidden {
