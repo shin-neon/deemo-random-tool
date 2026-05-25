@@ -3,67 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#141016" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; object-src 'none';" />
   <title>DEEMO ランセレツール</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
   <main class="app">
-    <header class="header">
-      <h1>DEEMO ランセレツール</h1>
-      <p>パック・難易度・レベルを指定してランダム選曲できます。</p>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">DEEMO -Reborn-</p>
+        <h1>ランセレツール</h1>
+      </div>
     </header>
 
-    <section class="card">
-      <h2>ランセレ条件</h2>
+    <section id="randomView" class="view is-active" aria-label="ランセレ">
+      <section class="card hero-card">
+        <h2>ランセレ条件</h2>
 
-      <label class="label">
-        パック
-        <select id="packSelect">
-          <option value="all">全パック</option>
-        </select>
-      </label>
+        <div class="field-group">
+          <p class="field-title">パック</p>
+          <label class="radio-row">
+            <input type="radio" name="packMode" value="all" checked />
+            <span>全パック</span>
+          </label>
+          <label class="radio-row">
+            <input type="radio" name="packMode" value="custom" />
+            <span>パックを選択</span>
+          </label>
+        </div>
 
-      <label class="label">
-        難易度
-        <select id="difficultySelect">
-          <option value="all">全難易度</option>
-          <option value="Easy">Easy</option>
-          <option value="Normal">Normal</option>
-          <option value="Hard">Hard</option>
-          <option value="Extra">Extra</option>
-        </select>
-      </label>
+        <div id="packCheckboxArea" class="checkbox-area is-hidden"></div>
 
-      <div class="level-row">
-        <label class="label">
-          最小Lv
-          <input id="minLevelInput" type="number" min="1" max="15" value="1" />
-        </label>
+        <div class="field-group">
+          <p class="field-title">難易度</p>
+          <label class="radio-row">
+            <input type="radio" name="difficultyMode" value="all" checked />
+            <span>全て</span>
+          </label>
+          <label class="radio-row">
+            <input type="radio" name="difficultyMode" value="custom" />
+            <span>難易度を選択</span>
+          </label>
+        </div>
 
-        <label class="label">
-          最大Lv
-          <input id="maxLevelInput" type="number" min="1" max="15" value="15" />
-        </label>
-      </div>
+        <div id="difficultyCheckboxArea" class="chip-area is-hidden">
+          <label class="chip"><input type="checkbox" value="Easy" />Easy</label>
+          <label class="chip"><input type="checkbox" value="Normal" />Normal</label>
+          <label class="chip"><input type="checkbox" value="Hard" />Hard</label>
+        </div>
 
-      <button id="randomButton" class="primary-button">ランセレ</button>
+        <div class="level-grid">
+          <label class="input-label">最小Lv
+            <input id="minLevelInput" type="number" min="1" max="11" value="1" />
+          </label>
+          <label class="input-label">最大Lv
+            <input id="maxLevelInput" type="number" min="1" max="11" value="11" />
+          </label>
+        </div>
 
-      <div id="resultBox" class="result-box">
-        <div class="result-placeholder">ここに結果が表示されます</div>
-      </div>
+        <button id="randomButton" class="primary-button" type="button">ランセレ</button>
+      </section>
 
-      <button id="copyButton" class="secondary-button" disabled>結果をコピー</button>
+      <section id="resultCard" class="result-card is-empty">
+        <p class="empty-text">条件を選んで「ランセレ」を押してください。</p>
+      </section>
+
+      <button id="copyButton" class="secondary-button" type="button" disabled>結果をコピー</button>
     </section>
 
-    <section class="card">
-      <h2>曲一覧</h2>
-
-      <input id="searchInput" class="search-input" type="text" placeholder="曲名・アーティストで検索" />
-
-      <div id="songCount" class="song-count"></div>
-      <div id="songList" class="song-list"></div>
+    <section id="listView" class="view" aria-label="曲一覧">
+      <section class="card sticky-tools">
+        <label class="input-label">検索
+          <input id="searchInput" type="search" placeholder="曲名・アーティスト・Lvで検索" />
+        </label>
+        <label class="input-label">パック表示
+          <select id="listPackSelect"></select>
+        </label>
+        <p id="songCount" class="song-count"></p>
+      </section>
+      <section id="songList" class="song-list"></section>
     </section>
   </main>
+
+  <nav class="bottom-nav" aria-label="画面切替">
+    <button class="nav-button is-active" data-view="randomView" type="button">ランセレ</button>
+    <button class="nav-button" data-view="listView" type="button">曲一覧</button>
+  </nav>
 
   <script src="./songs.js"></script>
   <script src="./script.js"></script>
