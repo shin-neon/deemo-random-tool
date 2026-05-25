@@ -1,6 +1,22 @@
-# DEEMO -Reborn- 非公式補助ツール v0.99
+# DEEMO -Reborn- 非公式補助ツール v0.99.3
 
 スマホ操作前提の DEEMO -Reborn- 抽選用静的Webアプリです。
+
+## 注意事項 / 免責事項
+
+本ツールは shin_neon が個人制作した非公式ファンツールです。  
+DEEMO / Rayark 公式とは関係ありません。
+
+掲載されている楽曲情報・難易度情報などについて、
+正確性・完全性を保証するものではありません。
+
+本ツール利用によって発生した問題・損害について、
+作成者は責任を負いません。
+
+本ツール内で使用している楽曲名・パック名等の権利は、
+各権利者に帰属します。
+
+問題がある場合は、X（開発・ツール系）までご連絡ください。
 
 ## 使用方法
 
@@ -53,3 +69,25 @@ pack_image/
 - `pack_image` の画像ファイル名は `songs.js` の `packs` と一致させています。
 - 今回はTVモード難易度のみ実装しています。
 - VRモード難易度は未使用です。
+
+## ツール情報
+
+画面右上の「ⓘ」ボタンから、作成者情報・協力者情報・非公式ツールである旨を確認できます。
+
+## Credits
+
+### Created by
+
+shin_neon
+
+- X（日常）: https://x.com/5h1n_n30n
+- X（開発・ツール系）: https://x.com/shin_neon_tw
+- Twitch: https://www.twitch.tv/shin_neon
+
+### Special Thanks
+
+しいな様  
+DEEMO配信者 / データ投入・データ確認協力
+
+- X: https://x.com/shiina_81417
+- Twitch: https://www.twitch.tv/shiina_41777

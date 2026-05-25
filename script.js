@@ -360,4 +360,28 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
+const infoButton = document.getElementById("infoButton");
+const infoModal = document.getElementById("infoModal");
+const infoCloseButton = document.getElementById("infoCloseButton");
+const infoModalBackdrop = document.getElementById("infoModalBackdrop");
+
+function openInfoModal() {
+  infoModal.classList.remove("is-hidden");
+}
+
+function closeInfoModal() {
+  infoModal.classList.add("is-hidden");
+}
+
+if (
+  infoButton &&
+  infoModal &&
+  infoCloseButton &&
+  infoModalBackdrop
+) {
+  infoButton.addEventListener("click", openInfoModal);
+  infoCloseButton.addEventListener("click", closeInfoModal);
+  infoModalBackdrop.addEventListener("click", closeInfoModal);
+}
+
 initialize();

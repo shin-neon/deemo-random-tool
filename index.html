@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#141016" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; object-src 'none';" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; base-uri 'none'; object-src 'none'; " />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -15,8 +15,15 @@
   <main class="app">
     <header class="app-header">
       <div>
-        <p class="eyebrow">DEEMO -Reborn- 非公式補助ツール v0.99.2</p>
+        <p class="eyebrow">DEEMO -Reborn- 非公式補助ツール v0.99.3</p>
         <h1 id="appTitle">🗳️抽選箱🗳️</h1>
+      </div>
+      <div class="header-actions">
+        <span class="header-credit">© shin_neon</span>
+
+        <button id="infoButton" class="info-button" type="button" aria-label="ツール情報を表示">
+          ⓘ
+        </button>
       </div>
     </header>
 
@@ -98,6 +105,52 @@
     <button class="nav-button is-active" data-view="randomView" type="button">抽選</button>
     <button class="nav-button" data-view="listView" type="button">楽曲検索</button>
   </nav>
+  <div id="infoModal" class="info-modal is-hidden">
+    <div class="info-modal-backdrop" id="infoModalBackdrop"></div>
+
+    <section class="info-modal-content" role="dialog" aria-modal="true" aria-labelledby="infoModalTitle">
+      <button id="infoCloseButton" class="info-close-button" type="button" aria-label="閉じる">
+        ×
+      </button>
+
+      <h2 id="infoModalTitle">DEEMO -Reborn- 非公式補助ツール</h2>
+
+      <div class="info-section">
+        <h3>Notice</h3>
+
+        <p class="info-note">
+          本ツールは個人制作の非公式ファンツールです。<br>
+          DEEMO / Rayark 公式とは関係ありません。<br>
+          楽曲情報・難易度情報の正確性は保証されません。<br>
+          本ツールの利用によって発生した問題・損害について、<br>
+          作者は責任を負いません。ご利用は自己責任でお願いします。
+        </p>
+      </div>
+
+      <div class="info-section">
+        <h3>Created by</h3>
+        <p class="info-name">shin_neon</p>
+        <div class="info-links">
+          <a href="https://x.com/5h1n_n30n" target="_blank" rel="noopener noreferrer">X（日常）</a>
+          <a href="https://x.com/shin_neon_tw" target="_blank" rel="noopener noreferrer">X（開発・ツール系）</a>
+          <a href="https://www.twitch.tv/shin_neon" target="_blank" rel="noopener noreferrer">Twitch</a>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <h3>Special Thanks</h3>
+        <p class="info-name">しいな様</p>
+        <p class="info-note">DEEMO配信者 / データ投入・データ確認協力</p>
+        <div class="info-links">
+          <a href="https://x.com/shiina_81417" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://www.twitch.tv/shiina_41777" target="_blank" rel="noopener noreferrer">Twitch</a>
+        </div>
+      </div>
+      <p class="info-copyright">
+        © shin_neon
+      </p>
+    </section>
+  </div>
 
   <script src="./songs.js"></script>
   <script src="./script.js"></script>
