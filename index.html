@@ -12,8 +12,8 @@
   <main class="app">
     <header class="app-header">
       <div>
-        <p class="eyebrow">DEEMO -Reborn-</p>
-        <h1>抽選ツール</h1>
+        <p class="eyebrow">DEEMO -Reborn- 非公式補助ツール v0.90</p>
+        <h1 id="appTitle">🗳️抽選箱🗳️</h1>
       </div>
     </header>
 
@@ -76,7 +76,7 @@
       <button id="copyButton" class="secondary-button" type="button" disabled>twitchチャット用に結果コピー</button>
     </section>
 
-    <section id="listView" class="view" aria-label="曲一覧">
+    <section id="listView" class="view" aria-label="楽曲検索">
       <section class="card sticky-tools">
         <label class="input-label">検索
           <input id="searchInput" type="search" placeholder="曲名・アーティスト・Lvで検索" />
@@ -85,6 +85,7 @@
           <select id="listPackSelect"></select>
         </label>
         <p id="songCount" class="song-count"></p>
+        <p class="song-count">楽曲カードを長押しすると曲情報をコピーできます。</p>
       </section>
       <section id="songList" class="song-list"></section>
     </section>
@@ -92,7 +93,7 @@
 
   <nav class="bottom-nav" aria-label="画面切替">
     <button class="nav-button is-active" data-view="randomView" type="button">抽選</button>
-    <button class="nav-button" data-view="listView" type="button">曲一覧</button>
+    <button class="nav-button" data-view="listView" type="button">楽曲検索</button>
   </nav>
 
   <script src="./songs.js"></script>

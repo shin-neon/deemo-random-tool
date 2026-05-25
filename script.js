@@ -1,6 +1,7 @@
 const STORAGE_KEY = "deemoRandomToolSettings.v2";
 const DIFFICULTIES = ["Easy", "Normal", "Hard"];
 
+const appTitle = document.getElementById("appTitle");
 const views = document.querySelectorAll(".view");
 const navButtons = document.querySelectorAll(".nav-button");
 const packModeRadios = document.querySelectorAll('input[name="packMode"]');
@@ -69,6 +70,13 @@ function bindEvents() {
 function switchView(viewId) {
   views.forEach((view) => view.classList.toggle("is-active", view.id === viewId));
   navButtons.forEach((button) => button.classList.toggle("is-active", button.dataset.view === viewId));
+
+  if (appTitle) {
+    appTitle.textContent = viewId === "randomView"
+      ? "🗳️抽選箱 |っ・ω・)╮=͟͟͞=͟͟͞＝=͟͟͞=͟͟͞ 💎5 ⛩️"
+      : "🎵楽曲一覧🎵";
+  }
+
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
@@ -210,8 +218,7 @@ async function handleCopyResult() {
 
   try {
     await navigator.clipboard.writeText(latestResultText);
-    copyButton.textContent = "コピーしました";
-    setTimeout(() => { copyButton.textContent = "twitchチャット用に結果コピー"; }, 1200);
+    showToast("楽曲情報をコピーしました。");
   } catch (error) {
     alert("コピーに失敗しました。結果テキストを長押しコピーしてください。");
   }
@@ -230,6 +237,10 @@ function renderSongList() {
 
   songCount.textContent = `${filtered.length}曲表示中`;
   songList.innerHTML = filtered.map((song) => renderSongCard(song)).join("");
+
+  songList.querySelectorAll(".song-card").forEach((card, index) => {
+    attachLongPressCopy(card, filtered[index]);
+  });
 }
 
 function renderSongCard(song) {
@@ -247,6 +258,82 @@ function renderSongCard(song) {
       </div>
     </article>
   `;
+}
+
+function attachLongPressCopy(card, song) {
+  let pressTimer = null;
+
+  const startPress = () => {
+    pressTimer = setTimeout(() => {
+      copySongInfo(song);
+    }, 650);
+  };
+
+  const cancelPress = () => {
+    if (pressTimer) {
+      clearTimeout(pressTimer);
+      pressTimer = null;
+    }
+  };
+
+  card.addEventListener("touchstart", startPress, { passive: true });
+  card.addEventListener("touchend", cancelPress);
+  card.addEventListener("touchmove", cancelPress);
+  card.addEventListener("touchcancel", cancelPress);
+  card.addEventListener("mousedown", startPress);
+  card.addEventListener("mouseup", cancelPress);
+  card.addEventListener("mouseleave", cancelPress);
+  card.addEventListener("contextmenu", (event) => event.preventDefault());
+}
+
+async function copySongInfo(song) {
+  const difficultyText = Object.entries(song.difficulties)
+    .map(([difficulty, level]) => `${difficulty} Lv${level}`)
+    .join(" / ");
+
+  const text = `${song.title} / ${song.artist} / ${difficultyText}`;
+
+  try {
+    await navigator.clipboard.writeText(text);
+    showToast("楽曲情報をコピーしました。");
+  } catch (error) {
+    alert("コピーに失敗しました。");
+  }
+}
+
+function showToast(message) {
+  let toast = document.getElementById("copyToast");
+
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.id = "copyToast";
+    toast.style.position = "fixed";
+    toast.style.left = "50%";
+    toast.style.bottom = "84px";
+    toast.style.transform = "translateX(-50%)";
+    toast.style.padding = "10px 14px";
+    toast.style.borderRadius = "999px";
+    toast.style.background = "rgba(20, 20, 28, 0.92)";
+    toast.style.color = "#ffffff";
+    toast.style.fontSize = "0.9rem";
+    toast.style.fontWeight = "700";
+    toast.style.zIndex = "9999";
+    toast.style.boxShadow = "0 8px 24px rgba(0, 0, 0, 0.35)";
+    toast.style.pointerEvents = "none";
+    toast.style.opacity = "0";
+    toast.style.transition = "opacity 0.18s ease, transform 0.18s ease";
+    document.body.appendChild(toast);
+  }
+
+  toast.textContent = message;
+  toast.style.opacity = "1";
+  toast.style.transform = "translateX(-50%) translateY(-6px)";
+
+  clearTimeout(toast._timer);
+  toast._timer = setTimeout(() => {
+    toast.style.opacity = "0";
+    toast.style.transform = "translateX(-50%) translateY(0)";
+  }, 1200);
 }
 
 function getPackImage(packName) {
