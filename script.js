@@ -73,8 +73,8 @@ function switchView(viewId) {
 
   if (appTitle) {
     appTitle.textContent = viewId === "randomView"
-      ? "🗳️抽選箱 |っ・ω・)╮=͟͟͞=͟͟͞＝=͟͟͞=͟͟͞ 💎5 ⛩️"
-      : "🎵楽曲一覧🎵";
+      ? "🎲抽選箱🎲 |っ・ω・)╮=͟͟͞=͟͟͞＝=͟͟͞=͟͟͞ 💎5 ⛩️"
+      : "🎹楽曲一覧🎹";
   }
 
   window.scrollTo({ top: 0, behavior: "smooth" });
