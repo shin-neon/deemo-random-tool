@@ -72,7 +72,7 @@ const songs = [
   {  title: "Delphinium",  artist: "SIHanatsuka",  pack: "Reborn Collection",  difficulties: { Easy: 1, Normal: 4, Hard: 7 }},
   {  title: "Accelerando",  artist: "計畫通行",  pack: "Reborn Collection",  difficulties: { Easy: 4, Normal: 8, Hard: 10 }},
   {  title: "Tempestuous",  artist: "計畫通行",  pack: "Reborn Collection",  difficulties: { Easy: 5, Normal: 8, Hard: 10 }},
-  {  title: "Exodus",  artist: "Iris",  pack: "Reborn Collection",  difficulties: { Easy: 4, Normal: 7, Hard: 9 }},
+  {  title: "Exodus",  artist: "Iris",  pack: "Reborn Collection",  difficulties: { Easy: 5, Normal: 7, Hard: 9 }},
   {  title: "eterno",  artist: "Takashi OKAMOTO(12sound) feat.Tsukasa Shiraki",  pack: "Reborn Collection",  difficulties: { Easy: 4, Normal: 6, Hard: 8 }},
   {  title: "Liar",  artist: "Takashi OKAMOTO(12sound)",  pack: "Reborn Collection",  difficulties: { Easy: 3, Normal: 5, Hard: 7 }},
   {  title: "Squeaky Mind",  artist: "t+pazolite",  pack: "Reborn Collection",  difficulties: { Easy: 3, Normal: 7, Hard: 10 }},
