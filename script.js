@@ -17,6 +17,9 @@ const searchInput = document.getElementById("searchInput");
 const listPackSelect = document.getElementById("listPackSelect");
 const songCount = document.getElementById("songCount");
 const songList = document.getElementById("songList");
+const resultModal = document.getElementById("resultModal");
+const resultModalBackdrop = document.getElementById("resultModalBackdrop");
+const resultCloseButton = document.getElementById("resultCloseButton");
 
 const packMap = new Map(packs.map((pack) => [pack.name, pack]));
 let latestResultText = "";
@@ -65,6 +68,13 @@ function bindEvents() {
     renderSongList();
     saveSettings();
   });
+  if (resultModalBackdrop) {
+    resultModalBackdrop.addEventListener("click", closeResultModal);
+  }
+
+  if (resultCloseButton) {
+    resultCloseButton.addEventListener("click", closeResultModal);
+  }
 }
 
 function switchView(viewId) {
@@ -72,9 +82,9 @@ function switchView(viewId) {
   navButtons.forEach((button) => button.classList.toggle("is-active", button.dataset.view === viewId));
 
   if (appTitle) {
-    appTitle.textContent = viewId === "randomView"
-      ? "🎲抽選箱🎲\n |っ・ω・)╮=͟͟͞=͟͟͞＝=͟͟͞=͟͟͞ 💎5 ⛩️"
-      : "🎹楽曲一覧🎹";
+    appTitle.innerHTML = viewId === "randomView"
+      ? `🎲抽選箱🎲 <small class="title-sub">|っ・ω・)╮=͟͟͞=͟͟͞＝=͟͟͞=͟͟͞ 💎5 ⛩️</small>`
+      : `🎹楽曲一覧🎹`;
   }
 
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -204,6 +214,7 @@ function handleRandomSelect() {
     </div>
   `;
   copyButton.disabled = false;
+  openResultModal();
 }
 
 function showMessage(message, isError = false) {
@@ -371,6 +382,13 @@ function openInfoModal() {
 
 function closeInfoModal() {
   infoModal.classList.add("is-hidden");
+}
+function openResultModal() {
+  resultModal.classList.remove("is-hidden");
+}
+
+function closeResultModal() {
+  resultModal.classList.add("is-hidden");
 }
 
 if (
