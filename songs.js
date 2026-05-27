@@ -6,11 +6,11 @@ const packs = [
   { name: "Reborn Collection", image: "pack_image/Reborn Collection.png"},
   { name: "Stone Monument Collection", image: "pack_image/Stone Monument Collection.png"},
   { name: "Aioi Collection", image: "pack_image/Aioi Collection.png" },
-  { name: "Cytus Selection vol.1", image: "pack_image/Cytus Selection vol.1.webp" },
+  { name: "Cytus Selection vol.1", image: "pack_image/Cytus Selection vol.1.png" },
   { name: "Cytus Selection vol.2", image: "pack_image/Cytus Selection vol.2.png" },
-  { name: "EGOIST Special Selection", image: "pack_image/EGOIST Special Selection.webp" },
-  { name: "Knight Iris Collection", image: "pack_image/Knight Iris Collection.webp" },
-  { name: "MILI collection", image: "pack_image/MILI collection.webp" },
+  { name: "EGOIST Special Selection", image: "pack_image/EGOIST Special Selection.png" },
+  { name: "Knight Iris Collection", image: "pack_image/Knight Iris Collection.png" },
+  { name: "MILI collection", image: "pack_image/MILI collection.png" },
   { name: "N.M.S.T. Collection", image: "pack_image/N.M.S.T. Collection.png" },
   { name: "Rayark Selection vol.3", image: "pack_image/Rayark Selection vol.3.png" }
 ];
