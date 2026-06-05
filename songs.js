@@ -5,14 +5,15 @@ const packs = [
   { name: "Golden Sheets Collection", image: "pack_image/Golden Sheets Collection.png"},
   { name: "Reborn Collection", image: "pack_image/Reborn Collection.png"},
   { name: "Stone Monument Collection", image: "pack_image/Stone Monument Collection.png"},
-  { name: "Aioi Collection", image: "pack_image/Aioi Collection.png" },
   { name: "Cytus Selection vol.1", image: "pack_image/Cytus Selection vol.1.png" },
-  { name: "Cytus Selection vol.2", image: "pack_image/Cytus Selection vol.2.png" },
-  { name: "EGOIST Special Selection", image: "pack_image/EGOIST Special Selection.png" },
-  { name: "Knight Iris Collection", image: "pack_image/Knight Iris Collection.png" },
   { name: "MILI collection", image: "pack_image/MILI collection.png" },
+  { name: "Cytus Selection vol.2", image: "pack_image/Cytus Selection vol.2.png" },
   { name: "N.M.S.T. Collection", image: "pack_image/N.M.S.T. Collection.png" },
-  { name: "Rayark Selection vol.3", image: "pack_image/Rayark Selection vol.3.png" }
+  { name: "Aioi Collection", image: "pack_image/Aioi Collection.png" },
+  { name: "Rayark Selection vol.3", image: "pack_image/Rayark Selection vol.3.png" },
+  { name: "Knight Iris Collection", image: "pack_image/Knight Iris Collection.png" },
+  { name: "Knight Rosabell Collection", image: "pack_image/Knight Rosabell Collection.png" },
+  { name: "EGOIST Special Selection", image: "pack_image/EGOIST Special Selection.png" },
 ];
 
 const songs = [
@@ -125,9 +126,15 @@ const songs = [
   { pack: "Knight Iris Collection", title: "Forbidden Codex", artist: "Hoskey", difficulties: { Easy: 3, Normal: 6, Hard: 10 } },
   { pack: "Knight Iris Collection", title: "Knight of Firmament", artist: "Eye XY", difficulties: { Easy: 2, Normal: 7, Hard: 8 } },
 
+  { pack: "Knight Rosabell Collection", title: "Lord Of Crimson Rose", artist: "Eye DT feat. Searlait", difficulties: { Easy: 3, Normal: 6, Hard: 8 } },
+  { pack: "Knight Rosabell Collection", title: "Predawn", artist: "Nicode", difficulties: { Easy: 2, Normal: 7, Hard: 10 } },
+  { pack: "Knight Rosabell Collection", title: "The Fallen Bloom", artist: "Hoskey", difficulties: { Easy: 2, Normal: 4, Hard: 6 } },
+  { pack: "Knight Rosabell Collection", title: "Where You Are Not", artist: "Nicode", difficulties: { Easy: 4, Normal: 8, Hard: 10 } },
+  { pack: "Knight Rosabell Collection", title: "Music. The Eternity of Us", artist: "Mai Aoyagi", difficulties: { Easy: 3, Normal: 6, Hard: 8 } }, 
+
   { pack: "EGOIST Special Selection", title: "All Alone With You", artist: "EGOIST", difficulties: { Easy: 3, Normal: 5, Hard: 8 } },
   { pack: "EGOIST Special Selection", title: "Planetes", artist: "EGOIST", difficulties: { Easy: 1, Normal: 3, Hard: 7 } },
   { pack: "EGOIST Special Selection", title: "キミソラキセキ", artist: "EGOIST", difficulties: { Easy: 2, Normal: 4, Hard: 7 } },
   { pack: "EGOIST Special Selection", title: "Ghost of a smile", artist: "EGOIST", difficulties: { Easy: 1, Normal: 3, Hard: 6 } },
-  { pack: "EGOIST Special Selection", title: "Departures ～あなたにおくるアイの歌～", artist: "EGOIST", difficulties: { Easy: 2, Normal: 5, Hard: 7 } }
+  { pack: "EGOIST Special Selection", title: "Departures ～あなたにおくるアイの歌～", artist: "EGOIST", difficulties: { Easy: 2, Normal: 5, Hard: 7 } },
 ];
